@@ -4,6 +4,8 @@
 #Chr_10	681	2	0	G:0	C:0
 #Usage: awk -f fix_diff_2pops.awk postBQSR.SNPs.Swe.frq.count postBQSR.SNPs.Cat.frq.count > fixeddiff.list
 
+#So far only adapted to biallelic sites
+
 NR==FNR && $4 == 20{
 split($5, ref, ":");
 split($6, alt, ":");
