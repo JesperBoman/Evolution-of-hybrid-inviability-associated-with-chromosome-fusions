@@ -1,8 +1,13 @@
 #u!/usr/bin/awk -f
-#Input: Allele counts from vcftools:
+
+#Input: Allele counts from vcftools, for example:
 #CHROM	POS	N_ALLELES	N_CHR	{ALLELE:COUNT}
 #Chr_10	681	2	0	G:0	C:0
+
 #Usage: awk -f fix_diff_2pops.awk postBQSR.SNPs.Swe.frq.count postBQSR.SNPs.Cat.frq.count > fixeddiff.list
+
+#Only alleles with complete information for both populations are used here. 
+#This is a conservative measure to increase the probability that an observed "fixed difference" in the sample is a true fixed difference.
 
 #So far only adapted to biallelic sites (in the entire vcf: SWE+CAT+Outgroup samples)
 
