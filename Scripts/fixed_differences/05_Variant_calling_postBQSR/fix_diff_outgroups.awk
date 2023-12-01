@@ -2,7 +2,7 @@
 #Usage: awk -f fix_diff_outgroups.awk postBQSR.SNPs.Out.frq.count fixeddiff.list > fixeddiff_out.list
 
 #Five out of eight gene copies must have a certain allele. That gene allele is considered ancestral.
-#So far only adapted to biallelic sites
+#So far only adapted to biallelic sites (in the entire vcf: SWE+CAT+Outgroup samples)
 
 NR==FNR && $4 > 4{
 split($5, ref, ":");
