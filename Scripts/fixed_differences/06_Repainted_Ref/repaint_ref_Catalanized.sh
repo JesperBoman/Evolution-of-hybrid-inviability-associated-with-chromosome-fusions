@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
+#Change all inferred fixed differences in the genome fasta file into the allele of the Catalan (CAT) population
 
-
-GENOME="../../reference/Lsin_DToL.fasta"
+GENOME="../reference/Lsin_DToL.fasta"
 
 
 ml bioinfo-tools BEDTools/2.29.2
