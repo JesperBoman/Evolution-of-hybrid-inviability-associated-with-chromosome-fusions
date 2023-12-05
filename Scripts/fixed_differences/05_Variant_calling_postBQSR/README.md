@@ -1,9 +1,11 @@
+## General information ##
+
 This folder contains the relevant scripts for variant calling after base-quality score recalibration (BQSR).
 
 It also contains scripts for inferring fixed differences.
 
 
-## Infer fixed differences ##
+## Inference of fixed differences ##
 awk -f fix_diff_2pops.awk postBQSR.SNPs.Swe.frq.count postBQSR.SNPs.Cat.frq.count > fixeddiff.list
 
 #Removed fixed indels (since they can be problematic for PoolSeq data)
