@@ -1,0 +1,59 @@
+#    It is a parameters file for GADMA software.
+
+#    Lines started from # are ignored.
+#    Also comments at the end of a line are ignored too.
+#    Every line contains: Identificator of parameter : value.
+
+#!!!     means pay attention to this parameter, they are primary.
+
+#!!!
+#    Output directory to write all GADMA out.
+#    One need to set it to a missing or empty directory.
+#    If it is resumed from other directory and output directory 
+#    isn't set, GADMA will add '_resumed' for previous output 
+#    directory.
+Output directory: /fixed_differences/07_popgen/Demographic_inference/gadma/gadma_output_noMig10_th0
+Input data: /fixed_differences/07_popgen/Demographic_inference/gadma/CAT-SWE.sfs
+Population labels: [CAT, SWE]
+Projections: [20, 20]
+Outgroup: False
+Sequence length: 7489125
+Linked SNP's: True
+Directory with bootstrap: Null
+Engine: moments
+Pts: [20, 30, 40]
+Relative parameters: False
+Theta0: 0.0217184625
+Mutation rate: 0.0000000029
+Recombination rate: Null
+Time for generation: Null
+Custom filename: Null
+Lower bound: Null
+Upper bound: Null
+Parameter identifiers: Null
+Initial structure: [1, 1]
+Final structure: [1, 1]
+Only sudden: False
+Dynamics: [Sud, Lin, Exp]
+No migrations: True
+Symmetric migrations: False
+Migration masks: Null
+Selection: False
+Dominance: False
+Split fractions: True
+Inbreeding: False
+Ancestral size as parameter: False
+Upper bound of first split: Null
+Upper bound of second split: Null
+Local optimizer: BFGS_log
+Print models' code every N iteration: 0
+Model plot engine: moments
+Draw models every N iteration: 0
+Units of time in drawing: generations
+Vmin: 1
+Silence: False
+Verbose: 1
+Number of repeats: 10
+Number of processes: 10
+Resume from: Null
+Only models: False
