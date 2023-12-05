@@ -1,1 +1,28 @@
-#
+#Hiqh-quality SNPs were filtered further using vcftools, removing all SNPs with missing allelic information and thinning the set so that the distance between adjacent SNPs is at least 10 kb. 
+
+vcf="~/fixed_differences/05_Variant_calling_postBQSR/postBQSR.HQSNPs.dedup.g.vcf.gz"
+
+vcftools --max-missing 1 --thin 10000 --gzvcf $vcf --recode --out mm1.thin10kb
+
+#I then further filtered away SNPs overlapping coding sequence using bedtools. The idea is to increase the share of SNPs that evolve neutrally.
+
+cds="../annotation/cds.bed"
+
+bedtools intersect -v -a mm1.thin10kb.recode.vcf -b $cds -header > mm1.thin10kb.noCDS.recode.vcf 
+
+
+#I then obtained a joint MAF for SWE and CAT populations using easySFS (see here: ./easySFS.py -i mm1.thin10kb.noCDS.recode.vcf -p pops.list -a --proj=20,20)
+
+ml miniconda3
+
+#Create and activate a new environment: 
+conda create -n easySFS
+conda activate easySFS
+
+#Install dependencies:
+conda install -c bioconda dadi pandas
+git clone https://github.com/isaacovercast/easySFS.git
+cd easySFS
+chmod 777 easySFS.py
+
+./easySFS.py -i mm1.thin10kb.noCDS.recode.vcf -p pops.list -a --proj=20,20 
