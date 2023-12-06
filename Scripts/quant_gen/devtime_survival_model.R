@@ -55,7 +55,7 @@ modeldev4 <-MCMCglmm(scale(devtime) ~ Sex+as.factor(Survival),
                      random = ~ us(1+Stage):animal+animal, ginv = list(animal = Ainv),
                      data = data_long_noEtE, prior = Prior_gauss4, rcov =~ units, family = "gaussian", nitt=10^5, burnin=10^4,thin=100, saveX=T,saveZ=T,saveXL=T, pr=T )
 
-save(modeldev4, file="modeldev4_noEtE_pexpand_mcmcGLMM_1M.rda")
+save(modeldev4, file="modeldev4_noEtE_pexpand_mcmcGLMM.rda")
 
 Prior_gauss4 <- list(R = list(V = 1, nu = 1e-6),
                      G = list(G1 = list(V = diag(6), nu = 1e-6), G2 = list(V = 1, nu = 1e-6)))
@@ -65,4 +65,4 @@ modeldev4 <-MCMCglmm(scale(devtime) ~ Sex+as.factor(Survival),
                      random = ~ us(1+Stage):animal+animal, ginv = list(animal = Ainv),
                      data = data_long_noEtE, prior = Prior_gauss4, rcov =~ units, family = "gaussian", nitt=10^5, burnin=10^4,thin=100, saveX=T,saveZ=T,saveXL=T, pr=T )
 
-save(modeldev4, file="modeldev4_noEtE_uninformative_mcmcGLMM_1M.rda")
+save(modeldev4, file="modeldev4_noEtE_uninformative_mcmcGLMM.rda")
