@@ -32,7 +32,7 @@ Prior1.1 <- list(R = list(V = 1, fix = 1),
                    
 model1.1 <- MCMCglmm(Survival ~ 1,
                      random = ~ animal, ginv = list(animal = Ainv),
-                     data = F2data, prior = Prior1.1, family = "threshold", trunc=TRUE, nitt=10^6, burnin=10^4, thin=50)
+                     data = F2data, prior = Prior1.1, family = "threshold", trunc=TRUE, nitt=10^5, burnin=10^4,thin=100)
                      
 model1.1_uninf <- model1.1
 save(model1.1_uninf, file="model1.1_uninfprior_survival_mcmcGLMM_1M.rda")
@@ -45,7 +45,7 @@ Prior1.1 <- list(R = list(V = 1, fix = 1),
 
 model1.1 <- MCMCglmm(Survival ~ 1,
                      random = ~ animal, ginv = list(animal = Ainv),
-                     data = F2data, prior = Prior1.1, family = "threshold", trunc=TRUE, nitt=10^6, burnin=10^4, thin=50)
+                     data = F2data, prior = Prior1.1, family = "threshold", trunc=TRUE, nitt=10^5, burnin=10^4,thin=100)
 
 
 model1.1_pexpand <- model1.1
