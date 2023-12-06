@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 
-## Sign (also known as candidate) region resampling overlap analysis ##
+## Candidate region resampling overlap analysis ##
 
 
 
