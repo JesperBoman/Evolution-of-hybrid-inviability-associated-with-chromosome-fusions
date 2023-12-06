@@ -7,7 +7,7 @@ module load picard/2.23.4
 id=$2
 
 #Ref genome
-ref="/crex/proj/uppstore2017185/b2014034_nobackup/Jesper/F2/reference/Lsin_DToL_${id}Allele_for_fixedDiff_noDel.fa"
+ref="../reference/Lsin_DToL_${id}Allele_for_fixedDiff_noDel.fa"
 
 #Alignment
 
