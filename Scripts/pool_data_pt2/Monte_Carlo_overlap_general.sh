@@ -10,8 +10,8 @@
 
 
 
+mkdir Monte_Carlo_overlap
 
-mkdir annotation_overlap
 
 ml bioinfo-tools BEDTools/2.29.2
 faidx="../reference/Lsin_DToL.fasta.fai" #A fasta index file
