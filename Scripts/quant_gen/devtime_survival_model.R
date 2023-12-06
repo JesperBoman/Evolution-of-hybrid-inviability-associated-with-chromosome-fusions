@@ -40,13 +40,16 @@ data_long <- data_long[!is.na(data_long$animal),]
 data_long <- data_long[!is.na(data_long$Sex),]
 data_long <- data_long[!is.na(data_long$Survival),]
 
-Prior_gauss4 <- list(R = list(V = 1, nu = 0.002),
-                     G = list(G1 = list(V = diag(6), nu = 0.002, alpha.mu = rep(0, 6), alpha.V= diag(1, 6, 6)), G2 = list(V = 1, nu = 0.002,  alpha.mu = 0,  alpha.V = 1)))
-
+#Skipping egg-to-emergence, there is quite some measurment error for Egg_to_emergence in relation to the length of development up until that point
+#E.g. when a certain egg was laid on a particular day was not recorded (imagine the work!), so there will be quite some uncertainty in that measure
 data_long$Stage <- as.character(data_long$Stage)
 data_long_noEtE  <- data_long[data_long$Stage != "Egg_to_emergence",]
 data_long_noEtE$Stage <- factor(data_long_noEtE$Stage , levels=c("II", "III", "IV", "V", "P", "Imago"))
 data_long_noEtE<-data_long_noEtE[!is.na(data_long_noEtE$Stage),]
+
+Prior_gauss4 <- list(R = list(V = 1, nu = 0.002),
+                     G = list(G1 = list(V = diag(6), nu = 0.002, alpha.mu = rep(0, 6), alpha.V= diag(1, 6, 6)), G2 = list(V = 1, nu = 0.002,  alpha.mu = 0,  alpha.V = 1)))
+
 
 modeldev4 <-MCMCglmm(scale(devtime) ~ Sex+as.factor(Survival),
                      random = ~ us(1+Stage):animal+animal, ginv = list(animal = Ainv),
