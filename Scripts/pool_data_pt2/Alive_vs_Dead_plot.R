@@ -40,7 +40,7 @@ AvD_results_QTLseq <- read.table(file=file.choose(), header=T)
 
 numChr=25
 
-ggplot(dataF2_frq_wide[dataF2_frq_wide$Chr_num < numChr,], aes(x=Position, y=(((F2ad_female.Swe+F2ad_female.Cat)*83+(F2ad_male.Swe+F2ad_male.Cat)*77)/(2*(77+83)) - ((DLDP.Swe+DLDP.Cat)*72+(DE.Swe+DE.Cat)*298)/(2*(72+298))), col=as.factor(Chr_num)))+
+ggplot(dataF2_frq_wide[dataF2_frq_wide$Chr_num < numChr,], aes(x=Position, y=(((F2ad_female.Swe+F2ad_female.Cat)*80+(F2ad_male.Swe+F2ad_male.Cat)*76)/(2*(76+80)) - ((DLDP.Swe+DLDP.Cat)*72+(DE.Swe+DE.Cat)*298)/(2*(72+298))), col=as.factor(Chr_num)))+
   geom_point(alpha=0.3)+
   geom_hline(yintercept=cutoff, lty=2)+
   geom_hline(yintercept=-cutoff, lty=2)+
