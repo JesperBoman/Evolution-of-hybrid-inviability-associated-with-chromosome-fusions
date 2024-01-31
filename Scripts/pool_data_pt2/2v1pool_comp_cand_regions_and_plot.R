@@ -75,8 +75,8 @@ data_sex_rat_adj<-data_sex_rat_adj[, c("Chromosome", "Chr_num", "region_ID", "Po
 
 colnames(data_sex_rat_adj) <- c("Chromosome", "Chr_num", "region_ID", "Position", "g1.1", "g1.2", "g2.1", "g2.2", "g3.1", "g3.2")
 
-n.g1=77
-n.g2=83
+n.g1=76
+n.g2=80
 
 p <- ggplot(data_sex_rat_adj, aes(x=Position, y=((g1.1+g1.2)*n.g1+(g2.1+g2.2)*n.g2)/(2*(n.g1+n.g2)) - (g3.1+g3.2)/2, col=as.factor(Chr_num)))+
   geom_point(alpha=0.3)+
