@@ -36,7 +36,7 @@ dataF2_frq_wide$Chr_num <- as.numeric(gsub("Chr_", "", dataF2_frq_wide$Chromosom
 
 
 #Inferring candidate regions: ALIVE vs DEAD
-#Note minor update (31/1/2024) to correct sample sizes, will be corrected next revision
+#Note minor update (31/1/2024) to correct sample sizes, manuscript will be corrected for next revision. Only minor impacts on results detected thus far.
 
 p <- ggplot(dataF2_frq_wide, aes(x=Position, y=(((F2ad_female.Swe+F2ad_female.Cat)*80+(F2ad_male.Swe+F2ad_male.Cat)*77)/(2*(76+80)) - ((DLDP.Swe+DLDP.Cat)*72+(DE.Swe+DE.Cat)*298)/(2*(72+298))), col=as.factor(Chr_num)))+
   geom_point(alpha=0.3)+
