@@ -36,8 +36,9 @@ dataF2_frq_wide$Chr_num <- as.numeric(gsub("Chr_", "", dataF2_frq_wide$Chromosom
 
 
 #Inferring candidate regions: ALIVE vs DEAD
+#Note minor update (31/1/2024) to correct sample sizes, will be corrected next revision
 
-p <- ggplot(dataF2_frq_wide, aes(x=Position, y=(((F2ad_female.Swe+F2ad_female.Cat)*83+(F2ad_male.Swe+F2ad_male.Cat)*77)/(2*(77+83)) - ((DLDP.Swe+DLDP.Cat)*72+(DE.Swe+DE.Cat)*298)/(2*(72+298))), col=as.factor(Chr_num)))+
+p <- ggplot(dataF2_frq_wide, aes(x=Position, y=(((F2ad_female.Swe+F2ad_female.Cat)*80+(F2ad_male.Swe+F2ad_male.Cat)*77)/(2*(76+80)) - ((DLDP.Swe+DLDP.Cat)*72+(DE.Swe+DE.Cat)*298)/(2*(72+298))), col=as.factor(Chr_num)))+
   geom_point(alpha=0.3)+
   geom_hline(yintercept=0.05, lty=2)+
   geom_hline(yintercept=-0.05, lty=2)+
@@ -102,7 +103,7 @@ sign_regions$Chr_type <- ifelse(sign_regions$Chr_num == 2 | sign_regions$Chr_num
 table(sign_regions$pop)
 range(sign_regions$sizeMB)
 
-write.table(sign_regions, file = paste("sign_regions_ADvDEAD_dedup_wave", cutoff, ".list", sep=""), sep = "\t", quote = F, row.names=F)
+write.table(sign_regions, file = paste("sign_regions_ADvDEAD_dedup_Nwave", cutoff, ".list", sep=""), sep = "\t", quote = F, row.names=F)
 
 sg_prop <- aggregate(sizeMB ~ pop, sign_regions, sum )
 sg_prop$Prop <- sg_prop$sizeMB/ (sum(chr_file$End-chr_file$Start)/10^6)
