@@ -2,7 +2,7 @@
 
 module load bioinfo-tools BEDTools/2.29.2 samtools/1.14 
 
-mapgd_dir="../pool_data_pt1/MAPGD-master/bin"
+mapgd_dir="../MAPGD-master/bin"
 
 sample=$1
 
