@@ -1,8 +1,8 @@
 # Evolution-of-hybrid-inviability-associated-with-chromosome-fusions
 
-Scripts used in the following preprint:
+Scripts used in the following paper:
 
-[Evolution of hybrid inviability associated with chromosome fusions](https://www.biorxiv.org/content/10.1101/2023.11.30.569355v1)
+[Evolution of hybrid inviability associated with chromosome fusions](https://doi.org/10.1111/mec.17672)
 
 
 
