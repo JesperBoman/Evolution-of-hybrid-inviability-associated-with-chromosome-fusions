@@ -34,7 +34,7 @@ loci=args[2]
 physL=30
 
 #Recombination probability
-recP<-(args[3]*physL)/(100*loci) #Implicitly physL=genL, so roughly 60 cM with chiasmatic male meiosis. Sex-averaged 30 cM. This gives 1 cM, which is conservative
+recP<-(args[3]*physL)/(100*loci) #Implicitly physL=genL, so roughly 60 cM with chiasmatic male meiosis. Sex-averaged 30 cM. This gives 1 cM/Mb, which is conservative
 
 
 
@@ -54,7 +54,7 @@ for(j in 1:1000){
       seg_freq_AF<-mean(rbinom(nAF, 1, p=0.5))
       pool <- rbinom(nAF*pool_fraction, 1, p=seg_freq_AF)
       pool_freq<-mean(pool)
-      #From PoolHelper
+      #Code below is from PoolHelper (https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14185)
       # calculate the parameters for the negative binomial
       pnb <- mean_nb/var_nb
       rnb <- (mean_nb^2)/(var_nb - mean_nb)
