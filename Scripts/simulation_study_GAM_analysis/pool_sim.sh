@@ -14,7 +14,7 @@ do
 
 #args[1] = constant pool fraction
 #args[2] = number of loci
-#args[3] = rec rate
+#args[3] = rec rate in centiMorgans per megabasepair
 
 Rscript GAMsim.R $pf $loci $rr >> sim_res.csv
 
